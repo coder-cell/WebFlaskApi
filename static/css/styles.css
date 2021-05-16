@@ -1,0 +1,17 @@
+<style>
+#t01 th {
+  color: white;
+  background-color: black;
+}
+
+#t01 tr:nth-child(even) {
+  background-color: #d88a63;
+}
+#t01 tr:nth-child(odd) {
+  background-color: #edad9e;
+}
+
+#t01 tr {
+ text-align: center
+}
+</style>
