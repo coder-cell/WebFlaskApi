@@ -5,7 +5,7 @@
 }
 
 #t01 tr:nth-child(even) {
-  background-color: #d88a63;
+  background-color: #f9c2b6;
 }
 #t01 tr:nth-child(odd) {
   background-color: #edad9e;
