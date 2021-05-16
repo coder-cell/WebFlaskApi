@@ -1,7 +1,9 @@
+import json
+
 import flask
-from flask import request, jsonify
-from dict2xml import dict2xml
+from flask import request, jsonify, render_template
 import sqlite3
+from types import SimpleNamespace
 
 app = flask.Flask("python")
 app.config["DEBUG"] = True
@@ -17,8 +19,10 @@ def dict_factory(cursor, row):
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Distant Reading Archive</h1><p>This site is a " \
-           "prototype API for distant reading of science fiction novels.</p>"
+    getbooks = api_all()
+    strjson = json.dumps(getbooks.json)
+    dictbooks = json.loads(strjson, object_hook=lambda d: SimpleNamespace(**d))
+    return render_template("index.html", data=dictbooks)
 
 
 @app.route('/api/v1/resources/books/all', methods=['GET'])
