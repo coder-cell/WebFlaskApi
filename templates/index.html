@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>REST API</title>
+</head>
+<body>
+<h1>This is the Home page</h1>
+<table id="t01" style="width:50%">
+    <tr>
+        <th> Title</th>
+        <th> Author</th>
+        <th> Year of Publish</th>
+    </tr>
+    {% for items in data %}
+    <tr>
+        <td> {{ items.title }} </td>
+        <td> {{ items.author }} </td>
+        <td> {{ items.published }} </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
